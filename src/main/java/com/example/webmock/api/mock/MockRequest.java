@@ -18,7 +18,7 @@ import lombok.extern.jackson.Jacksonized;
 @AllArgsConstructor
 public class MockRequest {
 
-    private String response; // TODO: @NullOrNotBlank
+    private String response;
 
     @NotBlank private String uri;
     @NotBlank private String method;

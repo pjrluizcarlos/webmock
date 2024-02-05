@@ -17,11 +17,12 @@ import static java.lang.String.format;
 
 @Slf4j
 @CrossOrigin
+@RestController
 @RequiredArgsConstructor
-@RestController(MockExecutionController.BASE_PATH_TO_MOCK_API)
-public class MockExecutionController {
+@RequestMapping(MockController.BASE_PATH_TO_MOCK_API)
+public class MockController {
 
-    protected static final String BASE_PATH_TO_MOCK_API = "/mocks/execution";
+    protected static final String BASE_PATH_TO_MOCK_API = "/mocks";
 
     private final MockService service;
 

@@ -19,8 +19,8 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(MockExecutionController.class)
-class MockExecutionControllerWebTest {
+@WebMvcTest(MockController.class)
+class MockControllerWebTest {
 
     private static final String URI = "/test-1";
     private static final HttpMethod HTTP_METHOD = HttpMethod.PUT;
@@ -41,7 +41,7 @@ class MockExecutionControllerWebTest {
 
         when(service.findByUriAndMethod(any(), any())).thenReturn(Optional.of(model));
 
-        mockMvc.perform(MockMvcRequestBuilders.request(HTTP_METHOD, MockExecutionController.BASE_PATH_TO_MOCK_API + URI))
+        mockMvc.perform(MockMvcRequestBuilders.request(HTTP_METHOD, MockController.BASE_PATH_TO_MOCK_API + URI))
                 .andExpect(status().is(HTTP_STATUS.value()))
                 .andExpect(content().string(RESPONSE));
 

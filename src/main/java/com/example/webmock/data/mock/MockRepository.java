@@ -28,11 +28,11 @@ public class MockRepository {
         return dao.existsByUriAndMethod(uri, method);
     }
 
-    @Transactional
     public Mock save(@NonNull Mock model) {
-        dao.deleteAllByUriAndMethod(model.getUri(), model.getMethod());
+        MockEntity entityToSave = dao.findByUriAndMethod(model.getUri(), model.getMethod())
+                .map(entity -> mapper.map(entity, model))
+                .orElse(mapper.map(model));
 
-        MockEntity entityToSave = mapper.map(model);
         MockEntity entitySaved = dao.save(entityToSave);
 
         return mapper.map(entitySaved);

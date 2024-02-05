@@ -27,4 +27,11 @@ public class MockRepositoryMapper {
                 .build();
     }
 
+    public MockEntity map(@NonNull MockEntity entity, @NonNull Mock model) {
+        return entity.toBuilder()
+                .response(model.getResponse())
+                .status(model.getStatus())
+                .build();
+    }
+
 }

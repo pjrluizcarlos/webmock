@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder(toBuilder = true)
 public class MockEntity {
 
     @Id
@@ -26,3 +26,4 @@ public class MockEntity {
     private Integer status;
 
 }
+

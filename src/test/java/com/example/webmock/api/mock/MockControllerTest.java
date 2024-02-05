@@ -22,14 +22,14 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class MockExecutionControllerTest {
+class MockControllerTest {
 
     private static final String URI = "/test-1";
     private static final HttpStatus STATUS = HttpStatus.OK;
     private static final HttpMethod METHOD = HttpMethod.GET;
     private static final String RESPONSE = "{\"message\": \"Hello World!\"}";
 
-    @InjectMocks private MockExecutionController controller;
+    @InjectMocks private MockController controller;
     @Mock private MockService service;
     @Mock private HttpServletRequest request;
 
